@@ -4,14 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Application {
 
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
-        ChromeOptions options = new ChromeOptions();
-        WebDriver driver = new ChromeDriver(options);
+        WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
         String initUrl = "https://www.freelance-info.fr/missions?keywords=Java%2C+Spring%2C+remote";
         driver.get(initUrl);
@@ -32,7 +30,7 @@ public class Application {
                     remote = "0";
                 }
                 if (Integer.parseInt(remote.trim()) == 100) {
-                    System.out.println(driverJob.getCurrentUrl());
+                    CSVService.writeToCsv(driverJob.getCurrentUrl());
                 }
                 driverJob.close();
             });
