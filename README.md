@@ -10,7 +10,7 @@ Pick all 100% remote positions on freelance-info.fr
 String initUrl="https://www.freelance-info.fr/missions?keywords=Java%2C+Spring%2C+remote";
 ```
 
-### ➡️ Set your chromedrive path
+### ➡️ Set your chromedriver path
 
 #### Application.java line 11
 
